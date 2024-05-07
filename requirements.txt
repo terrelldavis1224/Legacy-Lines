@@ -9,5 +9,4 @@ better-profanity
 flask
 Flask-Limiter
 gunicorn
-os
 datetime
