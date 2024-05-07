@@ -2,6 +2,5 @@ numpy
 pandas
 nba_api
 flask
-back_end
 os
 datetime
