@@ -1,7 +1,6 @@
 numpy
 pandas
-nba_api.stats.endpoints
-nba_api.stats.static
+nba_api
 flask
 back_end
 os
