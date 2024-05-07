@@ -9,6 +9,16 @@ nba_players = pd.DataFrame(nba_players)
 
 
 def process_user_answers(user_answers):
+    
+
+    nba_player_info_list = []
+    career_info_list = []
+    for x in range(4):  
+      nba_player_info, career_info = get_player(x)
+      nba_player_info_list.append(nba_player_info)
+      career_info_list.append(career_info)
+
+    main_player_info, main_career_info = get_player(-1)
     for index in range(4):
        for stat in ['PTS','REB','AST','STL','BLK']:
           a=float(career_info_list[index].iloc[0][stat])
@@ -44,11 +54,3 @@ def get_player(i):
 
 
 
-nba_player_info_list = []
-career_info_list = []
-for x in range(4):  
-      nba_player_info, career_info = get_player(x)
-      nba_player_info_list.append(nba_player_info)
-      career_info_list.append(career_info)
-
-main_player_info, main_career_info = get_player(-1)
