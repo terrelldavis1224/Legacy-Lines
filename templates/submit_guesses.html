@@ -14,7 +14,7 @@
 
     <h1>Results</h1>
     <br>
-
+<div class="table-container">
     <table>
         <tr>
             <td>Player</td>
@@ -37,7 +37,8 @@
             <td>{{ main_career_info['TEAM_ABBREVIATION'].values[0] }}</td>
         </tr>
     </table>
-
+    </div>
+<div class="table-container">
     <table>
         <tr>
             <td>Player</td>
@@ -61,7 +62,7 @@
         {% endfor %}
     </table>
     
-
+</div>
     <div class="center">
     <p>Correct: {{ correct }} / 20</p>
 

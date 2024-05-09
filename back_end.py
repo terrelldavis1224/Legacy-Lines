@@ -6,8 +6,6 @@ from nba_api.stats.static import players
 
 nba_players = pd.read_csv('nba_players_is_active.csv')
 current_nba_player_info = pd.read_csv('all_players_career_stats.csv')
-
-
 def process_user_answers(user_answers):
     
 

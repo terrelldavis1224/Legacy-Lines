@@ -12,7 +12,7 @@
     </div>
 
     <br>
-<div class="center">
+<div class="table-container">
 
     <table>
         <tr>
@@ -38,8 +38,8 @@
     </table>
     <br>
 </div>
-    <!-- Form for user selections -->
-    <form action="/submit_guesses" method="post">
+<form action="/submit_guesses" method="post">
+    <div class="table-container">
         <table>
             <tr>
                 <td>Player</td>
@@ -65,12 +65,12 @@
             </tr>
             {% endfor %}
         </table>
-        <div class="center">
-            <input type="submit" class="b">
+    </div>
+    <div class="center">
+        <input type="submit" class="b">
+    </div>
+</form>
 
-
-        </div>
-    </form>
 
     <script src="{{ url_for('static', filename='js/o.js') }}"></script>
     
