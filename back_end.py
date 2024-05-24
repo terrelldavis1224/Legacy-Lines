@@ -43,18 +43,22 @@ def get_player(i):
     today = datetime.now().strftime('%Y%m%d')
     
     random_state = np.random.RandomState(seed=int(today)+i)
-    
+
+
     nba_player_info = nba_players.sample(1, random_state=random_state)
     player_id = nba_player_info['id'].values[0]
-
+    print("error", i,nba_player_info)
    
     get_player_info=current_nba_player_info[current_nba_player_info['PLAYER_ID'] == player_id]
+    if get_player_info.empty:
+         while  get_player_info.empty:
+            nba_player_info = nba_players.sample(1, random_state=random_state)
+            player_id = nba_player_info['id'].values[0]
+            get_player_info=current_nba_player_info[current_nba_player_info['PLAYER_ID'] == player_id]
 
- 
+    
     career_info = get_player_info[['PLAYER_AGE', 'GP', 'FG_PCT', 'REB', 'AST', 'STL',
        'BLK', 'TOV', 'PF', 'PTS','TEAM_ABBREVIATION','GP',"SEASON_ID"]].sample(1, random_state=random_state)
     
     return nba_player_info['full_name'].values[0], career_info
 
-
-get_player(1)
