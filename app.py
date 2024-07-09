@@ -7,7 +7,6 @@ from datetime import datetime, timedelta
 app = Flask(__name__)
 
 
-#app.secret_key = os.getenv('FLASK_SECRET_KEY', 'fallback_secret_key_if_not_set')
 
 @app.route('/')
 def index():
