@@ -15,13 +15,14 @@ def process_user_answers(user_answers):
       nba_player_info, career_info = get_player(x)
       nba_player_info_list.append(nba_player_info)
       career_info_list.append(career_info)
-
+   
     main_player_info, main_career_info = get_player(-1)
+    print(main_career_info)
+
     for index in range(4):
        for stat in ['PTS','REB','AST','STL','BLK']:
           a=float(career_info_list[index].iloc[0][stat])
-          b=float(career_info.iloc[0][stat])
-      
+          b=float(main_career_info.iloc[0][stat])
           if  a > b:
             if user_answers[stat.lower()+str(index)] == "Over":
                user_answers[stat.lower()+str(index)] = "T"
@@ -33,7 +34,6 @@ def process_user_answers(user_answers):
                user_answers[stat.lower()+str(index)] = "F"
             else:
                user_answers[stat.lower()+str(index)] = "T"
-  
     return user_answers
 
 
@@ -47,7 +47,6 @@ def get_player(i):
 
     nba_player_info = nba_players.sample(1, random_state=random_state)
     player_id = nba_player_info['id'].values[0]
-    print("error", i,nba_player_info)
    
     get_player_info=current_nba_player_info[current_nba_player_info['PLAYER_ID'] == player_id]
     if get_player_info.empty:
